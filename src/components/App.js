@@ -16,21 +16,6 @@ import withAuthentication from './withAuthentication';
 import * as routes from '../constants/routes';
 
 const App = () => (
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     authUser: null,
-  //   }
-  // }
-
-  // componentDidMount() {
-  //   firebase.auth.onAuthStateChanged(authUser => {
-  //     authUser
-  //       ? this.setState(() => ({ authUser }))
-  //       : this.setState(() => ({ authUser: null }));
-  //   });
-  // }
-
   <Router>
     <div>
       <Navigation />
