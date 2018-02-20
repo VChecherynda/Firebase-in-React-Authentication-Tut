@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-import SignOutBtn from './SignOut';
+import SignOutButton from './SignOut';
 import * as routes from '../constants/routes';
 
 const Navigation = (props, { authUser }) =>
@@ -18,7 +18,7 @@ const NavigationAuth = () =>
     <li><Link to={routes.LANDING}>Landing</Link></li>
     <li><Link to={routes.HOME}>Home</Link></li>
     <li><Link to={routes.ACCOUNT}>Account</Link></li>
-    <li><SignOutBtn /></li>
+    <li><SignOutButton /></li>
   </ul>
 
 const NavigationNonAuth = () =>
