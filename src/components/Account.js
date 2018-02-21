@@ -1,23 +1,28 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { compose } from 'recompose';
 
 import { PasswordForgetForm } from './PasswordForget';
 import withAuthorization from './withAuthorization';
 import PasswordChangeForm from './PasswordChange';
 
 
-const AccountPage = (props, { authUser }) =>
+const AccountPage = ({ authUser }) =>
   <div>
-    {console.log(authUser)}
     <h1>Account: {authUser.email}</h1>
     <PasswordForgetForm />
     <PasswordChangeForm />
   </div>
 
-AccountPage.contextTypes = {
-  authUser: PropTypes.object,
-};
+const mapStateToProps = (state) => ({
+  authUser: state.sessionState.authUser,
+});
 
 const authCondition = (authUser) => !!authUser;
 
-export default withAuthorization(authCondition)(AccountPage);
+
+export default compose(
+  withAuthorization(authCondition),
+  connect(mapStateToProps)
+)(AccountPage);
