@@ -1,5 +1,6 @@
 import * as firebase from 'firebase';
 
+
 export const prodConfig = {
   apiKey: "AIzaSyApykR2I_S3zX3WOPxFNRNjgAEA-4RMcBc",
   authDomain: "weatherappautorization.firebaseapp.com",
@@ -24,8 +25,10 @@ if (!firebase.apps.length) {
   firebase.initializeApp(config);
 }
 
+const db = firebase.database();
 const auth = firebase.auth();
 
 export {
+  db,
   auth,
 };
