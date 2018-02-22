@@ -58,7 +58,7 @@ class SignInForm extends Component {
       email,
       password,
       error
-    } = this.props;
+    } = this.state;
 
     const isInvalid =
       password === '' ||
